@@ -36,13 +36,11 @@ $(function () {
             success: function (res) {
                 if (res.status !== 0) {
                     //利用layui弹出框提示信息
-                    layer.open({
-                        content: res.message
-                    })
+                    layer.msg(res.message)
                 } else {
-                    layer.open({
-                        content: '注册成功,请登录'
-                    });
+                    layer.msg(
+                        '注册成功,请登录'
+                    );
                     $('#link_login').click()
                 }
             }
